@@ -29,9 +29,18 @@
         android:id="@+id/img_heart"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
         android:src="@drawable/baseline_favorite_24"
+        android:layout_marginEnd="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textview_apelido"/>
+
+    <ImageView
+        android:id="@+id/img_delete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/baseline_delete_24"
+        app:layout_constraintStart_toEndOf="@id/img_heart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textview_apelido"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

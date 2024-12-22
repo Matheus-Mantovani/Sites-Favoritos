@@ -10,10 +10,15 @@ import br.edu.ifsp.dmo.sitesfavoritos.databinding.ItemViewBinding
 import br.edu.ifsp.dmo.sitesfavoritos.model.Site
 import br.edu.ifsp.dmo.sitesfavoritos.view.listeners.SiteItemClickListener
 
-class SiteAdapter(val context: Context, val dataset: List<Site>, val listener: SiteItemClickListener) : RecyclerView.Adapter<SiteAdapter.ViewHolder>() {
+class SiteAdapter(val context: Context, var dataset: List<Site>, val listener: SiteItemClickListener) : RecyclerView.Adapter<SiteAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding: ItemViewBinding = ItemViewBinding.bind(view)
+    }
+
+    fun updateDataset(newDataset: List<Site>) {
+        dataset = newDataset
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,9 +38,11 @@ class SiteAdapter(val context: Context, val dataset: List<Site>, val listener: S
             holder.binding.imgHeart.setColorFilter(context.getColor(R.color.gray))
         }
 
-        holder.binding.imgHeart.setOnClickListener{listener.clickHeartSiteItem(position)}
+        holder.binding.imgHeart.setOnClickListener{ listener.clickHeartSiteItem(position) }
 
         holder.binding.layoutItem.setOnClickListener { listener.clickSiteItem((position)) }
+
+        holder.binding.imgDelete.setOnClickListener { listener.clickDeleteSiteItem(position) }
     }
 
     override fun getItemCount(): Int {

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sites Favoritos</string>
+    <string name="salvar">Salvar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="site_url">Endereço do site</string>
+    <string name="site_apelido">Identificação do site</string>
+    <string name="novo_site">Novo site</string>
+</resources>
